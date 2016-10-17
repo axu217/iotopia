@@ -10,6 +10,13 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    
+    @IBOutlet var currentCreditLabel: UILabel!
+    let networkManager: NetworkManager = (UIApplication.shared.delegate as! AppDelegate).networkManager
+
+    override func viewDidLoad() {
+        
+        
+        super.viewDidLoad()
+    }
 
 }

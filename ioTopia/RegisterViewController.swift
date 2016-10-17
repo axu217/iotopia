@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EZLoadingActivity
 
 class RegisterViewController: UIViewController, UITextFieldDelegate  {
     
@@ -20,13 +21,26 @@ class RegisterViewController: UIViewController, UITextFieldDelegate  {
     override func viewDidLoad() {
         self.title = "Register"
         username.delegate = self
+        
         password.delegate = self
         email.delegate = self
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginScreenViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         super.viewDidLoad()
         
-        
+    }
+    
+    @IBAction func register(_ sender: AnyObject) {
+        _ = EZLoadingActivity.show("Loading...", disableUI: true)
+        networkManager.register(username: username.text!, password: password.text!, email: email.text!)
+    }
+    
+    class func onRegisterSuccess() {
+        _ = EZLoadingActivity.hide(true, animated: true)
+    }
+    
+    class func onRegisterFailure() {
+        _ = EZLoadingActivity.hide(false, animated: true)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

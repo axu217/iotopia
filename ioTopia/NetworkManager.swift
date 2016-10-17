@@ -12,7 +12,7 @@ import SwiftyJSON
 class NetworkManager: NSObject {
     
     let path = "https://cory406.eecs.berkeley.edu";
-    let token = "";
+    var token = "";
     
     override init() {
         super.init()
@@ -21,13 +21,14 @@ class NetworkManager: NSObject {
     func login(username: String, password: String) {
         
         let parameters: Parameters = ["username": username, "password": password]
+        let loginPathAddon = "/rest_api/api-token-auth/"
         
-        Alamofire.request(path+"/rest_api/api-token-auth/", method: .post, parameters: parameters).responseJSON { response in
+        Alamofire.request(path+loginPathAddon, method: .post, parameters: parameters).responseJSON { response in
             switch response.result {
                 
             case .success(let value):
                 let json = JSON(value)
-                token = json["token"]
+                self.token = json["token"].stringValue
                 print("JSON: \(json)")
                 LoginScreenViewController.onLoginSuccess()
             case .failure(let error):
@@ -37,6 +38,29 @@ class NetworkManager: NSObject {
             }
             
         
+        }
+    }
+    
+    func register(username: String, password: String, email: String) {
+        
+        let parameters: Parameters = ["username": username, "password": password, "email": email]
+        let loginPathAddon = "/rest_api/api-token-auth/"
+        
+        Alamofire.request(path+loginPathAddon, method: .post, parameters: parameters).responseJSON { response in
+            switch response.result {
+                
+            case .success(let value):
+                let json = JSON(value)
+                self.token = json["token"].stringValue
+                print("JSON: \(json)")
+                RegisterViewController.onRegisterSuccess()
+            case .failure(let error):
+                print(error)
+                RegisterViewController.onRegisterFailure()
+                
+            }
+            
+            
         }
     }
     
