@@ -7,7 +7,7 @@ target 'ioTopia' do
 
   # Pods for ioTopia
   pod 'SwiftyJSON'
-  pod 'Alamofire'
-
+  pod 'Alamofire', '~> 4.0'
+  pod 'EZLoadingActivity'
 end
 
