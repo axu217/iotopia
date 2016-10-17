@@ -64,4 +64,8 @@ class NetworkManager: NSObject {
         }
     }
     
+    func getUserData(username: String) {
+        
+    }
+    
 }
