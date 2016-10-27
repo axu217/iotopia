@@ -48,9 +48,6 @@ class SendCreditViewController: UIViewController, UITableViewDataSource, UITable
             self.tableView.reloadData();
         })
     }
-    @IBAction func backToHome(_ sender: AnyObject) {
-        performSegue(withIdentifier: "sendCreditToHome", sender: nil)
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let temp = (tableView.cellForRow(at: indexPath) as! SendCreditTableCell).id

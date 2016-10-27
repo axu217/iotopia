@@ -42,29 +42,7 @@ class NetworkManager: NSObject {
         
         }
     }
-    
-    func register(username: String, password: String, email: String) {
-        
-        let parameters: Parameters = ["username": username, "password": password, "email": email]
-        let loginPathAddon = "/rest_api/api-token-auth/"
-        
-        Alamofire.request(path+loginPathAddon, method: .post, parameters: parameters).responseJSON { response in
-            switch response.result {
-                
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                RegisterViewController.onRegisterSuccess()
-            case .failure(let error):
-                print(error)
-                RegisterViewController.onRegisterFailure()
-                
-            }
-            
-            
-        }
-    }
-    
+
     func getUserCredits(completionHandler: @escaping ([String: Double], NSError?) -> ()){
         
         

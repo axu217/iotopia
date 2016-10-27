@@ -34,7 +34,7 @@ class LoginScreenViewController: UIViewController, UITextFieldDelegate  {
         networkManager.login(username: username.text!, password: password.text!) {result, error in
             if(error == nil) {
                 _ = EZLoadingActivity.hide(true, animated: true)
-                self.performSegue(withIdentifier: "loginToHome", sender: nil)
+                self.performSegue(withIdentifier: "LoginToTab", sender: nil)
 
             } else {
                 _ = EZLoadingActivity.hide(false, animated: true)

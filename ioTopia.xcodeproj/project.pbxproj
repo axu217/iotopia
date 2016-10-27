@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0EED261DC264D8008F8807 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0EED251DC264D8008F8807 /* TabViewController.swift */; };
 		3E3265AE1DB42EF80097DA71 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3265AD1DB42EF80097DA71 /* NetworkManager.swift */; };
 		3E509B961DC18490002FFCC8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E509B951DC18490002FFCC8 /* User.swift */; };
 		3E573FC41DB31305000AE7F1 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E573FC31DB31305000AE7F1 /* LoginScreenViewController.swift */; };
-		3E573FC61DB31727000AE7F1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E573FC51DB31727000AE7F1 /* RegisterViewController.swift */; };
 		3E9230481DAB0FAE00D6452D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9230471DAB0FAE00D6452D /* AppDelegate.swift */; };
 		3E92304A1DAB0FAE00D6452D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9230491DAB0FAE00D6452D /* ViewController.swift */; };
 		3E92304D1DAB0FAE00D6452D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E92304B1DAB0FAE00D6452D /* Main.storyboard */; };
@@ -25,10 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E0EED251DC264D8008F8807 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		3E3265AD1DB42EF80097DA71 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3E509B951DC18490002FFCC8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3E573FC31DB31305000AE7F1 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
-		3E573FC51DB31727000AE7F1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3E9230441DAB0FAE00D6452D /* ioTopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ioTopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9230471DAB0FAE00D6452D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E9230491DAB0FAE00D6452D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,10 +130,10 @@
 			children = (
 				3E92305A1DAB10EE00D6452D /* HomeViewController.swift */,
 				3E573FC31DB31305000AE7F1 /* LoginScreenViewController.swift */,
-				3E573FC51DB31727000AE7F1 /* RegisterViewController.swift */,
 				3EC32C131DB499FD0052D96C /* SendCreditViewController.swift */,
 				3EC32C151DB49FEE0052D96C /* SendCreditTableCell.swift */,
 				3EF0F64B1DC17FE900D9EC03 /* SendCreditFinalViewController.swift */,
+				3E0EED251DC264D8008F8807 /* TabViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -274,9 +274,9 @@
 				3E3265AE1DB42EF80097DA71 /* NetworkManager.swift in Sources */,
 				3EC32C161DB49FEE0052D96C /* SendCreditTableCell.swift in Sources */,
 				3E92304A1DAB0FAE00D6452D /* ViewController.swift in Sources */,
-				3E573FC61DB31727000AE7F1 /* RegisterViewController.swift in Sources */,
 				3E9230481DAB0FAE00D6452D /* AppDelegate.swift in Sources */,
 				3EC32C141DB499FD0052D96C /* SendCreditViewController.swift in Sources */,
+				3E0EED261DC264D8008F8807 /* TabViewController.swift in Sources */,
 				3E573FC41DB31305000AE7F1 /* LoginScreenViewController.swift in Sources */,
 				3E92305B1DAB10EE00D6452D /* HomeViewController.swift in Sources */,
 				3EF0F64A1DC16B5100D9EC03 /* UserBase.swift in Sources */,
