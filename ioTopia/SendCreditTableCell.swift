@@ -11,9 +11,13 @@ import UIKit
 class SendCreditTableCell: UITableViewCell {
     
     @IBOutlet var name: UILabel!
+    var id: Int = -1;
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
+
+    
+    
 }
