@@ -11,13 +11,21 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet var currentCreditLabel: UILabel!
-    @IBOutlet var powerCredits: UILabel!
-    @IBOutlet var waterCredits: UILabel!
+    @IBOutlet var waterCreditBar: CreditBarView!
+    @IBOutlet var powerCreditBar: CreditBarView!
+    @IBOutlet var waterCreditLabel: UILabel!
+    
+    
     let networkManager: NetworkManager = (UIApplication.shared.delegate as! AppDelegate).networkManager
 
     override func viewDidLoad() {
     
         super.viewDidLoad()
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
         fetchUserData() { response, error in
             if((error) != nil) {
@@ -25,8 +33,17 @@ class HomeViewController: UIViewController {
             }
             let temp = response["Power"]
             let temp2 = response["Water"]
-            self.powerCredits.text = String(format:"%f", temp!)
-            self.waterCredits.text = String(format:"%f", temp2!)
+            
+            self.waterCreditBar.setBarValue(temp: Int(temp2!))
+            self.waterCreditBar.setBarMax(temp: 5000)
+            
+            self.powerCreditBar.setBarValue(temp: Int(temp!))
+            self.powerCreditBar.setBarMax(temp: 5000)
+            
+            self.waterCreditBar.setNeedsDisplay()
+            self.powerCreditBar.setNeedsDisplay()
+            
+            self.waterCreditLabel.text = String(Int(temp!) + Int(temp2!))
         }
     }
     

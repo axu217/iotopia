@@ -136,6 +136,7 @@ class NetworkManager: NSObject {
     }
     
     func sendGift(id: Int, type: Int, quantity: Double, completionHandler: @escaping (String, NSError?) -> ()){
+        
         let parameters: Parameters = ["to_user_id":id, "credit_type_id":type, "quantity":quantity]
         let loginPathAddon = "/rest_api/gift_credit/"
         
@@ -143,14 +144,24 @@ class NetworkManager: NSObject {
             switch response.result {
                 
             case .success(let value):
+                let jsonValue = JSON(value)
+                let status = jsonValue["status"].stringValue
+                print(value)
+                print("success")
+                print()
+                print()
+                print()
                 
                 completionHandler("yolo", nil)
                 
                 
             case .failure(let error):
                 print(error)
-                completionHandler("yolo", error as NSError)
-                
+                print("failed")
+                print()
+                print()
+                print()
+        
             }
             
             

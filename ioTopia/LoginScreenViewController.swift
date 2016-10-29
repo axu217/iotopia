@@ -26,6 +26,8 @@ class LoginScreenViewController: UIViewController, UITextFieldDelegate  {
         password.delegate = self
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginScreenViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        username.text = "albertxu"
+        password.text = "welcome406"
         super.viewDidLoad()
     }
     

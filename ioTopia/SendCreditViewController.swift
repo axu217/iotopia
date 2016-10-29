@@ -14,6 +14,7 @@ class SendCreditViewController: UIViewController, UITableViewDataSource, UITable
     var userList: UserBase = UserBase();
     let networkManager: NetworkManager = (UIApplication.shared.delegate as! AppDelegate).networkManager
     
+    
     override func viewDidLoad() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -51,7 +52,25 @@ class SendCreditViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let temp = (tableView.cellForRow(at: indexPath) as! SendCreditTableCell).id
-        self.performSegue(withIdentifier: "sendCreditToProceed", sender: temp)
+        performFakeSegue(id: temp)
+        
+    }
+    
+    func performFakeSegue(id: Int) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        let viewController = storyboard.instantiateViewController(withIdentifier: "SendCreditFinalViewController")
+        
+        addChildViewController(viewController)
+        
+        view.addSubview(viewController.view)
+        
+        viewController.view.frame = view.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        viewController.didMove(toParentViewController: self)
+
+        
         
     }
     

@@ -21,22 +21,17 @@ class SendCreditFinalViewController: UIViewController {
     }
     
     @IBAction func sendPower(_ sender: AnyObject) {
+        print("sending power now")
         networkManager.sendGift(id: id, type: 1, quantity: Double(amount.text!)!) {result, error in
-            if (error != nil) {
-                print("yo")
-            } else {
-                print(error)
-            }
+
+            
         }
     }
     
     @IBAction func sendWater(_ sender: AnyObject) {
         networkManager.sendGift(id: id, type: 2, quantity: Double(amount.text!)!) {result, error in
-            if (error != nil) {
-                print("yo")
-            } else {
-                print(error)
-            }
+            
+            
         }
     }
 }
